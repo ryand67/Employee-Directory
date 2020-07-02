@@ -7,7 +7,8 @@ import API from './util/api';
 class App extends Component {
 
   state = { 
-    employees: []
+    employees: [],
+    search: ""
   }
 
   componentDidMount() {
@@ -16,12 +17,16 @@ class App extends Component {
     });
   }
 
+  handleChange = (event) => {
+    this.setState({ search: event.target.value });
+  }
+
   render() { 
     return ( 
       <div className="w-100 h-100">
         <div className="topBox"></div>
         <h1 className="text-center mt-5">EMPLOYEE DIRECTORY</h1>
-        <SearchBar />
+        <SearchBar handleChange={this.handleChange}/>
         <div className="listHeader d-flex justify-content-around text-center">
           <h2 className="listHeading">Name</h2>
           <h2 className="listHeading">Email</h2>
