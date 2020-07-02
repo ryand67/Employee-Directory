@@ -2,7 +2,7 @@ import React from 'react';
 
 const SearchBar = () => {
     return (
-        <div className="input-group flex-nowrap w-75">
+        <div className="input-group flex-nowrap w-25 mx-auto mt-5">
             <div className="input-group-prepend">
                 <span className="input-group-text" id="addon-wrapping">Search</span>
             </div>
