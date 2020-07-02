@@ -16,10 +16,24 @@ class App extends Component {
       this.setState({ employees: res.data })
     });
   }
+  callASDF = () => {
+    console.log(this.state);
+  }
 
   handleChange = (event) => {
     this.setState({ search: event.target.value });
+    let newList = this.state.employees.filter(employee => {
+      let fullName = `${employee.first} ${employee.last}`;
+      if(fullName.substr(0, this.state.search.length) === this.state.search.substr(0, this.state.search.length + 1)) {
+        return true;
+      } else {
+        return false;
+      }
+    })
+    this.setState({ employees: newList });
+    console.log(newList);
   }
+
 
   render() { 
     return ( 
