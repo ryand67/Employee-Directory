@@ -12,3 +12,7 @@
 .listItem * {
     margin: 0 1em;
 }
+
+.nameHeading {
+    cursor: pointer;
+}
