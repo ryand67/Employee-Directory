@@ -18,13 +18,11 @@ class App extends Component {
       this.setState({ renderList: res.data });
     });
   }
-  callASDF = () => {
-    console.log(this.state);
-  }
 
   handleChange = (event) => {
-    this.setState({ search: event.target.value });
-    this.employeeSearch();
+    this.setState({ search: event.target.value }, () => {
+      this.employeeSearch();
+    });
   }
 
   employeeSearch = () => {
