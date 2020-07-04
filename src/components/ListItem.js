@@ -1,5 +1,6 @@
 import React from 'react';
 
+//Returns a div with the employee info
 const ListItem = (props) => {
     return(
         <div className="listItem d-flex justify-content-around text-center">
